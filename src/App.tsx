@@ -1,29 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
-import DetailCtrlView from './components/DetailCtrlView'
 import GraphView from './components/GraphView'
+import DetailCtrlView from "./components/DetailCtrlView";
 function App() {
+    const [xAxis, setXAxisItem] = useState<boolean>(true);
+    const [yAxis, setYAxisItem] = useState<boolean>(true);
+    const [zAXis, setZAxisItem] = useState<boolean>(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-        <GraphView/>
-        <DetailCtrlView />
-      </header>
+    <div className="container">
+        <div className="home">
+            <GraphView/>
+            <DetailCtrlView
+                xAxis={xAxis}
+                yAxis={yAxis}
+                zAxis={zAXis}
+                onChangeXAxis={(flag) => {
+                    setXAxisItem(flag)
+                }}
+                onChangeYAxis={(flag) => {
+                    setYAxisItem(flag)
+                }}
+                onChangeZAxis={(flag) => {
+                    setZAxisItem(flag)
+                }}
+            />
+        </div>
     </div>
   );
 }
