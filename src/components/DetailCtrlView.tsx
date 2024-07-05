@@ -51,10 +51,10 @@ const DetailCtrlView: FC<Props> = ({xAxis, yAxis, zAxis, onChangeXAxis, onChange
                 <div className="mt_15">
                     <label className="lbl-title-sm">Mode</label>
                     <select className="bg_cmb_mode">
-                        <option value="cms">CMS</option>
-                        <option value="cms2">CMS2</option>
-                        <option value="cms3">CMS3</option>
-                        <option value="cms4">CMS4</option>
+                        <option value="rms">RMS</option>
+                        <option value="rms2">RMS2</option>
+                        <option value="rms3">RMS3</option>
+                        <option value="rms4">RMS4</option>
                     </select>
                 </div>
             </div>
